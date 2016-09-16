@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/color1984D1">
+
+    <ImageView
+        android:id="@+id/img_zhangdan"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/zhangdan" />
+
+    <TextView
+        android:id="@+id/img_zhangdan_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorffffff"
+        android:layout_toRightOf="@+id/img_zhangdan"
+        android:textSize="18sp"
+        android:text="账单" />
+
+    <ImageView
+        android:id="@+id/jiahao"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/jiahao"/>
+
+    <ImageView
+        android:id="@+id/tongxunlu"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/jiahao"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/tongxunlu"/>
+
+</RelativeLayout>
