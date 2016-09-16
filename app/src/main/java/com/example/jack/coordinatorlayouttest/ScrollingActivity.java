@@ -59,13 +59,11 @@ public class ScrollingActivity extends AppCompatActivity {
                     mToolbar1.setVisibility(View.VISIBLE);
                     mToolbar2.setVisibility(View.GONE);
                     setToolbar1Alpha(255);
-                    state=true;
                 } else if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
                     //收缩
                     mToolbar1.setVisibility(View.GONE);
                     mToolbar2.setVisibility(View.VISIBLE);
                     setToolbar2Alpha(255);
-                    state=false;
                 } else {
                     int alpha=255-Math.abs(verticalOffset)-150;
                     if(alpha<=0){
