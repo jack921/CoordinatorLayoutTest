@@ -3,9 +3,11 @@ package com.example.jack.coordinatorlayouttest;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 public class ScrollingActivity extends AppCompatActivity {
 
     private AppBarLayout mAppBarLayout=null;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
     private View mToolbar1=null;
     private View mToolbar2=null;
 
@@ -34,6 +37,8 @@ public class ScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
         myRecyclerView=(RecyclerView)findViewById(R.id.myRecyclerView);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        collapsingToolbarLayout=(CollapsingToolbarLayout)findViewById(R.id.toolbar_layout);
+        collapsingToolbarLayout.setStatusBarScrimColor(getResources().getColor(R.color.color1984D1));
 
         myRecyclerView.setAdapter(new ToolbarAdapter(this));
 
@@ -65,8 +70,9 @@ public class ScrollingActivity extends AppCompatActivity {
                     mToolbar2.setVisibility(View.VISIBLE);
                     setToolbar2Alpha(255);
                 } else {
-                    int alpha=255-Math.abs(verticalOffset)-150;
-                    if(alpha<=0){
+                    int alpha=255-Math.abs(verticalOffset);
+                    if(alpha<0){
+                        Log.e("alpha",alpha+"");
                         //收缩toolbar
                         mToolbar1.setVisibility(View.GONE);
                         mToolbar2.setVisibility(View.VISIBLE);
